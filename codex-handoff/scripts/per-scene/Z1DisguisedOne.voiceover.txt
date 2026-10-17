@@ -1,0 +1,13 @@
+Which is bigger: one over root two, or root two over two? <break time="0.4s" />
+
+Neither. <break time="0.2s" /> Both are zero point seven zero seven one. <break time="0.4s" />
+
+The second one is in standard form: <break time="0.2s" /> no radical in the denominator. <break time="0.4s" />
+
+To get there, multiply by root two over root two. <break time="0.2s" /> That's just one, in disguise, so the value doesn't change. <break time="0.4s" />
+
+Underneath, root two times root two is two. <break time="0.2s" /> The radical is gone. <break time="0.4s" />
+
+Same move for two over root three: <break time="0.2s" /> multiply by root three over root three, and you get two root three, over three. <break time="0.4s" />
+
+Multiply by a disguised one, and the radical leaves the denominator. <break time="0.4s" />

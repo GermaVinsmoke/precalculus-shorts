@@ -1,0 +1,21 @@
+The nearest star beyond the Sun is about forty trillion kilometers away. <break time="0.4s" />
+
+And a hydrogen atom weighs this much, in grams. <break time="0.4s" />
+
+Numbers like these are hard to read. <break time="0.2s" /> So scientists use scientific notation. <break time="0.4s" />
+
+A number from one up to ten, <break time="0.2s" /> times a power of ten. <break time="0.4s" />
+
+The exponent, n, <break time="0.2s" /> is an integer. <break time="0.4s" />
+
+Four times ten to the thirteenth: <break time="0.2s" /> move the decimal point thirteen places right. <break time="0.4s" />
+
+Forty trillion. <break time="0.4s" />
+
+A negative exponent moves the point left. <break time="0.4s" />
+
+Twenty-four places, <break time="0.2s" /> for the hydrogen atom. <break time="1.6s" />
+
+Positive exponent: a big number. <break time="0.2s" /> Negative exponent: a tiny one. <break time="0.4s" />
+
+One digit before the point, <break time="0.2s" /> times a power of ten. <break time="0.4s" />

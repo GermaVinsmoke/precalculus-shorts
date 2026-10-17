@@ -1,0 +1,11 @@
+Looks messy? <break time="0.2s" /> Four moves, <break time="0.2s" /> one law at a time. <break time="0.4s" />
+
+Law four: <break time="0.2s" /> the cube goes to every factor inside. <break time="0.4s" />
+
+Law three: <break time="0.2s" /> b to the fourth, cubed, is b to the twelfth. <break time="0.2s" /> And three cubed is twenty-seven. <break time="0.4s" />
+
+Now group the numbers, <break time="0.2s" /> the A terms, <break time="0.2s" /> and the B terms. <break time="0.4s" />
+
+Law one: <break time="0.2s" /> add the exponents. <break time="0.2s" /> Fifty-four, A to the sixth, B to the fourteenth. <break time="0.4s" />
+
+Seven laws, one big idea: <break time="0.2s" /> count the factors. <break time="0.4s" />

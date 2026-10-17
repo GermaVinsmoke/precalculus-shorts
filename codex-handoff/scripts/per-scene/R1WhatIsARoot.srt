@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:04,000
+3² = 9, and (−3)² = 9 too.
+
+2
+00:00:04,000 --> 00:00:09,033
+So is √9 = ±3?
+
+3
+00:00:09,033 --> 00:00:13,033
+No. The √ symbol means only the positive root…
+
+4
+00:00:13,033 --> 00:00:14,767
+…so √9 = 3.
+
+5
+00:00:14,767 --> 00:00:19,567
+Picture it: a square with area 9 has side 3.
+
+6
+00:00:19,567 --> 00:00:27,067
+And a cube with volume 8 has edge 2: the cube root of 8.
+
+7
+00:00:27,067 --> 00:00:30,867
+In general, the nth root undoes the nth power.
+
+8
+00:00:30,867 --> 00:00:34,967
+The 4th root of 81 is 3.
+
+9
+00:00:34,967 --> 00:00:41,400
+Odd roots handle negatives: the cube root of −8 is −2.
+
+10
+00:00:41,400 --> 00:00:44,400
+But no real number squared is negative…
+
+11
+00:00:44,400 --> 00:00:48,133
+…so √−8 is undefined.
+
+12
+00:00:48,133 --> 00:00:50,333
+A root undoes a power.
+
+13
+00:00:50,333 --> 00:00:55,700
+Even roots need non-negative numbers.

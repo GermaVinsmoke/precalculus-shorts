@@ -1,0 +1,15 @@
+Three squared, all to the fifth. Is it three to the seventh? <break time="0.4s" />
+
+To the fifth means five copies of three squared. <break time="0.4s" />
+
+Each one is two factors of three. <break time="0.2s" /> Five groups of two. <break time="0.4s" />
+
+That's five times two: <break time="0.2s" /> ten factors. Three to the tenth. <break time="0.4s" />
+
+Three squared times three to the fifth adds, to three to the seventh. <break time="0.2s" /> But a power of a power multiplies. <break time="0.4s" />
+
+Try it: <break time="0.2s" /> b to the fourth, all to the fifth. <break time="1.2s" />
+
+Four times five: <break time="0.2s" /> b to the twentieth. <break time="0.4s" />
+
+A power of a power? <break time="0.2s" /> Multiply the exponents. <break time="0.4s" />

@@ -1,0 +1,43 @@
+1
+00:00:00,000 --> 00:00:04,600
+Is x² + x the same as x³?
+
+2
+00:00:04,600 --> 00:00:11,233
+Picture them as tiles: x² is a square, x is a thin strip.
+
+3
+00:00:11,233 --> 00:00:15,367
+Different shapes: they can’t merge.
+
+4
+00:00:15,367 --> 00:00:19,967
+Like terms have the same variable and the same power.
+
+5
+00:00:19,967 --> 00:00:28,967
+5x⁷ + 3x⁷ = 8x⁷: add the counts.
+
+6
+00:00:28,967 --> 00:00:32,267
+The power stays the same.
+
+7
+00:00:32,267 --> 00:00:34,300
+Now add two polynomials.
+
+8
+00:00:34,300 --> 00:00:40,333
+Sort the terms by type: x³, x², x, and plain numbers…
+
+9
+00:00:40,333 --> 00:00:47,867
+…and combine each bin: 2x³ − x² − 5x + 4.
+
+10
+00:00:47,867 --> 00:00:50,867
+Same variable, same power? Add the counts.
+
+11
+00:00:50,867 --> 00:00:55,033
+Different? Leave them alone.

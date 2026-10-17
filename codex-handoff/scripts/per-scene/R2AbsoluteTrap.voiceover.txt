@@ -1,0 +1,13 @@
+Is the square root of x squared just x? <break time="0.4s" />
+
+Try x equals four: <break time="0.2s" /> root sixteen is four. <break time="0.2s" /> Works. <break time="0.4s" />
+
+Now try x equals negative four. <break time="0.2s" /> Negative four squared is sixteen, and root sixteen is four, not negative four. <break time="0.4s" />
+
+A square root always lands on the positive side. That's absolute value: <break time="0.2s" /> the square root of x squared is the absolute value of x. <break time="0.4s" />
+
+Same for any even root: <break time="0.2s" /> the fourth root of negative three, to the fourth, is three. <break time="0.4s" />
+
+Odd roots keep the sign: <break time="0.2s" /> the cube root of negative five, cubed, is negative five. <break time="0.4s" />
+
+Even root of an even power? <break time="0.2s" /> Use the absolute value. <break time="0.4s" />

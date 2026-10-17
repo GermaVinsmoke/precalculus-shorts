@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:02,600
+(3/4)⁻²?
+
+2
+00:00:02,600 --> 00:00:04,1000
+There's a neat trick.
+
+3
+00:00:04,1000 --> 00:00:09,233
+Remember: a negative exponent means 1 over the power.
+
+4
+00:00:09,233 --> 00:00:12,433
+One over 9/16 is 16/9…
+
+5
+00:00:12,433 --> 00:00:16,567
+…which is (4/3)².
+
+6
+00:00:16,567 --> 00:00:20,967
+The fraction flips, and the exponent turns positive.
+
+7
+00:00:20,967 --> 00:00:23,767
+That's Law 6.
+
+8
+00:00:23,767 --> 00:00:27,967
+Inside a fraction, a factor can hop across the bar…
+
+9
+00:00:27,967 --> 00:00:30,767
+…and its exponent changes sign.
+
+10
+00:00:30,767 --> 00:00:33,567
+That's Law 7.
+
+11
+00:00:33,567 --> 00:00:40,600
+Example: t⁻⁴ hops down, s⁻² hops up.
+
+12
+00:00:40,600 --> 00:00:46,133
+Then simplify: 3s³ over t⁶.
+
+13
+00:00:46,133 --> 00:00:47,133
+Negative exponent?
+
+14
+00:00:47,133 --> 00:00:53,300
+Flip it across the bar, and make it positive.

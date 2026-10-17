@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:05,400
+How do you write 56,920 in scientific notation?
+
+2
+00:00:05,400 --> 00:00:11,200
+Move the point left until one digit is in front:
+
+3
+00:00:11,200 --> 00:00:12,833
+4 places.
+
+4
+00:00:12,833 --> 00:00:19,167
+So 56,920 = 5.692 × 10⁴.
+
+5
+00:00:19,167 --> 00:00:22,967
+For a small number, move the point right…
+
+6
+00:00:22,967 --> 00:00:28,867
+…5 places: 9.3 × 10⁻⁵.
+
+7
+00:00:28,867 --> 00:00:31,467
+Going back? Same move, in reverse.
+
+8
+00:00:31,467 --> 00:00:35,967
+10⁹: nine places right.
+
+9
+00:00:35,967 --> 00:00:41,100
+10⁻⁶: six places left.
+
+10
+00:00:41,100 --> 00:00:43,700
+Calculators show this with an E…
+
+11
+00:00:43,700 --> 00:00:48,433
+…E12 means times 10¹².
+
+12
+00:00:48,433 --> 00:00:53,1000
+The exponent just counts the hops.

@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:02,000
+Subtract these two polynomials.
+
+2
+00:00:02,000 --> 00:00:06,433
+A common mistake: flipping only the first sign.
+
+3
+00:00:06,433 --> 00:00:10,633
+A minus before parentheses means −1 times everything inside…
+
+4
+00:00:10,633 --> 00:00:13,467
+…so every sign flips.
+
+5
+00:00:13,467 --> 00:00:20,667
+Watch it roll through: −x³, −5x², +7x.
+
+6
+00:00:20,667 --> 00:00:24,067
+Now sort and combine like terms.
+
+7
+00:00:24,067 --> 00:00:26,867
+The x³ terms cancel completely…
+
+8
+00:00:26,867 --> 00:00:32,767
+…leaving −11x² + 9x + 4.
+
+9
+00:00:32,767 --> 00:00:38,333
+A minus before parentheses flips every sign inside.

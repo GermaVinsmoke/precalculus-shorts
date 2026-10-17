@@ -1,0 +1,36 @@
+{
+  "name": "Ox math shorts",
+  "canvas": {
+    "video": {"width_px": 1080, "height_px": 1920, "fps_final": 60, "fps_preview": 30, "frame_units": [9, 16], "px_per_unit": 120},
+    "post":  {"width_px": 1080, "height_px": 1350, "frame_units": [9, 11.25], "px_per_unit": 120}
+  },
+  "colors": {
+    "background_edge": "#0B0D12",
+    "background_glow": "#151A26",
+    "base":      {"hex": "#58C4DD", "use": "bases, variables, numbers under a radical, the 10 in scientific notation"},
+    "exponent":  {"hex": "#FFD54F", "use": "exponents, root indexes, hops/counts, key verbs in captions"},
+    "result":    {"hex": "#83C167", "use": "answers, correct results, check marks"},
+    "warning":   {"hex": "#FC6255", "use": "traps, wrong answers, crosses, 'not'"},
+    "ink":       {"hex": "#ECEFF4", "use": "default text and math, plain coefficients"},
+    "muted":     {"hex": "#7D869C", "use": "secondary labels, header topic, example lines"},
+    "card_fill": "#141824",
+    "card_stroke": "#2A3042"
+  },
+  "fonts": {
+    "text": "Avenir Next (captions, labels, header; MEDIUM for captions, BOLD for labels/header)",
+    "math": "LaTeX Computer Modern via Manim MathTex (the 3Blue1Brown look)",
+    "post_examples": "LaTeX \\text{} (serif) in muted color"
+  },
+  "math_font_sizes": {"HERO": 210, "BIG": 150, "MID": 110, "SMALL": 84, "caption": 40, "label": 38},
+  "safe_zone_units": {
+    "note": "Frame x ∈ [-4.5, 4.5], y ∈ [-8, 8]. Avoid top 15%, bottom 25%, right 12% (platform UI).",
+    "top": 5.6, "bottom": -4.0, "left": -3.9, "right": 3.42, "center_x": -0.24,
+    "header_y": 5.15, "math_zone_center_y": 1.75, "math_zone_max_height": 4.5, "caption_center_y": -2.45
+  },
+  "header": "TOPIC (muted, letter-spaced, bold) + 'n / N' (ink) + three short bars in base/exponent/result",
+  "watermark": {"file": "project/assets/logo.png", "position": "bottom-right", "width_units": 1.05, "inset_units": 0.32, "opacity": 0.85,
+                "post": {"width_units": 0.85, "inset_units": 0.3}},
+  "captions": {"max_lines": 2, "wrap": "balanced two-line split, never shrink", "animation": "per-character fade-up stagger 0.012s, 0.25s ease-out; 0.2s fade-out"},
+  "video_length_s": [35, 55],
+  "narration": {"tool": "ElevenLabs", "model": "Multilingual v2 / Turbo / Flash (break tags)", "stability": 50, "similarity": 75, "style": "0-15", "speed": 0.95, "estimated_wps": 2.5}
+}

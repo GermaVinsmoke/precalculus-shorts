@@ -1,0 +1,9 @@
+# Python 3.12
+manim==0.21.0
+ManimPango==0.7.0
+pycairo==1.29.1
+numpy==2.5.3
+pillow==12.3.0
+# optional: only used to extract text from the textbook PDF
+pypdf==6.20.1
+# System (macOS, Homebrew): cairo, pango, pkg-config, ffmpeg (8.x), and a LaTeX install (TeX Live / MacTeX / BasicTeX)

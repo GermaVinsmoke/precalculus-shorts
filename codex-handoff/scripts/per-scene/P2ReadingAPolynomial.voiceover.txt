@@ -1,0 +1,13 @@
+What's the degree of eight minus x, <break time="0.2s" /> plus x squared, <break time="0.2s" /> minus one half x cubed? <break time="0.2s" /> It starts with eight. <break time="0.2s" /> Is the degree zero? <break time="0.4s" />
+
+Split it into terms: <break time="0.2s" /> four of them. <break time="0.2s" /> Each term keeps its sign. <break time="0.4s" />
+
+Read each term's number and exponent. <break time="0.2s" /> Eight is eight x to the zero. <break time="0.2s" /> Minus x is negative one x to the first. <break time="0.4s" />
+
+The degree is the highest exponent, <break time="0.2s" /> wherever it sits: <break time="0.2s" /> three. <break time="0.4s" />
+
+x to the eighth plus five x has just two terms, but degree eight. <break time="0.4s" />
+
+And a plain six has degree zero, because six is six x to the zero. <break time="0.4s" />
+
+The degree is the highest exponent. <break time="0.2s" /> The coefficient keeps its sign. <break time="0.4s" />

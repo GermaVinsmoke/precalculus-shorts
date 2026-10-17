@@ -1,0 +1,13 @@
+Rationalize one over the cube root of five. Multiply by cube root five? <break time="0.2s" /> Underneath you'd get cube root twenty-five: <break time="0.2s" /> still a radical. <break time="0.3s" />
+
+A cube root clears when the exponent inside reaches three. <break time="0.2s" /> Five to the first fills just one slot. <break time="0.3s" />
+
+So multiply by the cube root of five squared: <break time="0.2s" /> one plus two is three, and the cube root of five cubed is five. <break time="0.3s" />
+
+So the answer is cube root twenty-five, over five. <break time="0.2s" />
+
+Harder: the seventh root of one, over a squared. <break time="0.2s" /> a squared fills two of seven slots, <break time="0.3s" />
+
+so multiply by the seventh root of a to the fifth. <break time="0.3s" />
+
+Fill the exponent up to n, and the root clears. <break time="0.3s" />

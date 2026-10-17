@@ -1,0 +1,15 @@
+Three squared is nine. <break time="0.2s" /> So is negative three squared. So is the square root of nine, plus or minus three? <break time="0.4s" />
+
+No. <break time="0.2s" /> The root symbol means only the positive root: three. <break time="0.4s" />
+
+Picture it: <break time="0.2s" /> a square with area nine has side three. <break time="0.4s" />
+
+And a cube with volume eight has edge two. <break time="0.2s" /> That's the cube root of eight. <break time="0.4s" />
+
+In general, the nth root undoes the nth power. The fourth root of eighty-one is three. <break time="0.4s" />
+
+Odd roots can handle negatives: <break time="0.2s" /> the cube root of negative eight is negative two. <break time="0.4s" />
+
+But no real number squared is negative… so root negative eight is undefined. <break time="0.4s" />
+
+A root undoes a power. <break time="0.2s" /> Even roots need numbers that aren't negative. <break time="0.4s" />

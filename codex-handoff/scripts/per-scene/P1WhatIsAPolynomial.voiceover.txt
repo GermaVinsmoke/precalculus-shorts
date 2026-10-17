@@ -1,0 +1,15 @@
+Only one of these is a polynomial. <break time="0.2s" /> Which one? <break time="0.4s" />
+
+A monomial is a number times a power of x, where the exponent is a whole number. <break time="0.4s" />
+
+A polynomial is a sum of monomials. <break time="0.2s" />
+
+Scan the exponents: <break time="0.2s" /> two, one, and zero. <break time="0.2s" /> All whole numbers. Polynomial. <break time="0.4s" />
+
+Root x is x to the one half, <break time="0.2s" /> and one half isn't a whole number. <break time="0.4s" />
+
+And dividing by a variable isn't allowed either. <break time="0.4s" />
+
+Count the terms to name it: <break time="0.2s" /> one term, monomial. <break time="0.2s" /> Two, binomial. <break time="0.2s" /> Three, trinomial. <break time="0.4s" />
+
+A polynomial: a sum of terms, <break time="0.2s" /> each with a whole-number exponent. <break time="0.4s" />

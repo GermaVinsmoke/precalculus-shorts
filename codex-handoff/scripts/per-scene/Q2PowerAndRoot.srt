@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:06,1000
+8²/³: what do the 2 and the 3 each do?
+
+2
+00:00:06,1000 --> 00:00:10,400
+The bottom of the fraction is a root.
+
+3
+00:00:10,400 --> 00:00:16,233
+The top is a power, in either order.
+
+4
+00:00:16,233 --> 00:00:22,833
+Root first: the cube root of 8 is 2, and 2² is 4.
+
+5
+00:00:22,833 --> 00:00:29,433
+Power first: 8² is 64, and the cube root of 64 is 4.
+
+6
+00:00:29,433 --> 00:00:30,433
+Same answer.
+
+7
+00:00:30,433 --> 00:00:34,733
+Root first just keeps the numbers small.
+
+8
+00:00:34,733 --> 00:00:38,067
+Try 4³/².
+
+9
+00:00:38,067 --> 00:00:44,200
+Root first: √4 = 2, and 2³ = 8.
+
+10
+00:00:44,200 --> 00:00:48,000
+One catch: an even root on the bottom…
+
+11
+00:00:48,000 --> 00:00:51,233
+…means the base can't be negative.
+
+12
+00:00:51,233 --> 00:00:52,233
+Bottom: root.
+
+13
+00:00:52,233 --> 00:00:55,600
+Top: power.

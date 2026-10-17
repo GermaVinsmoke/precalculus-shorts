@@ -1,0 +1,19 @@
+Is x squared plus x the same as x cubed? <break time="0.4s" />
+
+Picture them as tiles: <break time="0.2s" /> x squared is a square, <break time="0.2s" /> x is a thin strip. <break time="0.4s" />
+
+Different shapes. They can't merge into one. <break time="0.4s" />
+
+Like terms have the same variable, and the same power. <break time="0.4s" />
+
+Five x to the seventh plus three x to the seventh <break time="0.2s" /> is eight x to the seventh. <break time="0.2s" /> Add the counts. <break time="0.4s" />
+
+The power stays the same. <break time="0.4s" />
+
+Now add two polynomials. <break time="0.2s" />
+
+Sort the terms by type: <break time="0.2s" /> x cubed, x squared, x, and plain numbers. <break time="0.4s" />
+
+Then combine each bin: <break time="0.2s" /> two x cubed, minus x squared, minus five x, plus four. <break time="0.4s" />
+
+Same variable, same power? Add the counts. <break time="0.2s" /> Different? Leave them alone. <break time="0.4s" />
