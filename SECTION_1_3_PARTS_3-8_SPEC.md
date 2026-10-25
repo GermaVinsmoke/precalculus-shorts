@@ -20,7 +20,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 
 ## 0. Requirements for every video (non-negotiable)
 
-1. **Base class:** subclass `PolyScene` (from `poly_common.py`) through a per-series class with `TOPIC = "..."` and `WATERMARK = True` (inherited). Set `PART = "n / N"`.
+1. **Base class:** subclass `PolyScene` (from `videos/polynomials/poly_common.py`) through a per-series class with `TOPIC = "..."` and `WATERMARK = True` (inherited). Set `PART = "n / N"`.
 2. **Format:** 1080×1920, 60 fps final; 540×960 / 30 fps for previews. Length **35–55 s**. If a video runs long, cut a beat rather than speed up the pacing.
 3. **Narration:** every beat goes through `self.say(line(subtitle_markup, spoken_text), anims=..., steps=..., gap=...)`.
    - Spoken text is ElevenLabs-ready: numbers and powers in words ("x squared", "minus seven x"), with `{BR}` (`<break time="0.2s" />`) for pauses.
@@ -43,8 +43,8 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
    - README table rows.
 
 ### Suggested new shared helpers
-- **`mult_common.py`:** `area_model(row_terms, col_terms)`. A rectangle split into a grid of cells, one per (row term × column term), with header labels and cell fill tinted by degree (x² blue, x yellow, constant grey, matching `algebra_tile()` in `add_common.py`). It returns the cells so products can be written into them. Used by M1, SP1, SP2, F2 and SF2.
-- **`fact_common.py`:**
+- **`videos/multiplying/mult_common.py`:** `area_model(row_terms, col_terms)`. A rectangle split into a grid of cells, one per (row term × column term), with header labels and cell fill tinted by degree (x² blue, x yellow, constant grey, matching `algebra_tile()` in `videos/add_subtract/add_common.py`). It returns the cells so products can be written into them. Used by M1, SP1, SP2, F2 and SF2.
+- **`videos/factoring/fact_common.py`:**
   - `pair_search(product, target_sum)`: a "slot machine" that cycles through factor pairs with live product and sum readouts, turning green on a match.
   - `factor_tree(root, children...)`: branches growing down, with leaves that turn green when prime.
   - `block(expr)`: a rounded box that stands for a repeated sub-expression, used for "treat x + y as one A".
@@ -56,7 +56,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 `class MultScene(PolyScene): TOPIC = "MULTIPLYING"`
 
 ### M1: Every term times every term (FOIL)
-- **File / class:** `mult1_foil.py` / `M1FOIL`, `PART = "1 / 2"`
+- **File / class:** `videos/multiplying/mult1_foil.py` / `M1FOIL`, `PART = "1 / 2"`
 - **Book:** Example 2. (2x + 1)(3x − 5) = 6x² − 10x + 3x − 5 = **6x² − 7x − 5**
 - **Signature visual:** an **area model**. A rectangle whose top side is split into `2x | 1` and whose left side is split into `3x | −5`. The four cells fill with the four products, and the FOIL arcs (F, O, I, L) light up the matching cells.
 
@@ -70,11 +70,11 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 | Card | Every term times every term. | Every term times every term. {BR} FOIL is just a way to not miss one. | Card: (a + b)(c + d) = ac + ad + bc + bd |
 
 ### M2: Bigger polynomials: distribute, then line up
-- **File / class:** `mult2_distribute.py` / `M2Distribute`, `PART = "2 / 2"`
+- **File / class:** `videos/multiplying/mult2_distribute.py` / `M2Distribute`, `PART = "2 / 2"`
 - **Book:** Example 3, both solutions. (2x + 3)(x² − 5x + 4) = **2x³ − 7x² − 7x + 12**
   - 2x · (x² − 5x + 4) = 2x³ − 10x² + 8x
   - 3 · (x² − 5x + 4) = 3x² − 15x + 12
-- **Signature visual:** distribution arcs (2x shoots an arc to each of the three terms, then 3 does the same). Then **table form**: the two partial rows stack like long multiplication, aligned in x³ / x² / x / 1 columns (reuse `BIN_X` / `bin_heads()` from `add_common.py`), and each column adds up.
+- **Signature visual:** distribution arcs (2x shoots an arc to each of the three terms, then 3 does the same). Then **table form**: the two partial rows stack like long multiplication, aligned in x³ / x² / x / 1 columns (reuse `BIN_X` / `bin_heads()` from `videos/add_subtract/add_common.py`), and each column adds up.
 
 | Beat | Subtitle | Spoken | Visual |
 |---|---|---|---|
@@ -92,7 +92,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 `class SpecialScene(PolyScene): TOPIC = "SPECIAL PRODUCTS"`
 
 ### SP1: The square of a sum (and the most common mistake)
-- **File / class:** `sprod1_square.py` / `SP1SquareOfSum`, `PART = "1 / 3"`
+- **File / class:** `videos/special_products/sprod1_square.py` / `SP1SquareOfSum`, `PART = "1 / 3"`
 - **Book:** the formulas (A ± B)² = A² ± 2AB + B²; the *Visualizing a Formula* Discovery Project; Example 4(a): (3x + 5)² = **9x² + 30x + 25**; Concept 8(a): (x + 5)² ≠ x² + 25
 - **Signature visual:** a **square with side a + b** that splits into an a² square, a b² square and two ab rectangles. The two rectangles flash, as the "forgotten middle".
 
@@ -107,7 +107,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 | Card | Squaring a sum? Don't forget 2AB. | Squaring a sum? {BR} Don't forget the two A B. | Card: (A ± B)² = A² ± 2AB + B² |
 
 ### SP2: Sum times difference: the middle cancels
-- **File / class:** `sprod2_sum_difference.py` / `SP2SumTimesDifference`, `PART = "2 / 3"`
+- **File / class:** `videos/special_products/sprod2_sum_difference.py` / `SP2SumTimesDifference`, `PART = "2 / 3"`
 - **Book:** (A + B)(A − B) = A² − B²; Example 5(a): (2x − √y)(2x + √y) = **4x² − y**; Example 5(b): (x + y − 1)(x + y + 1) = (x + y)² − 1 = **x² + 2xy + y² − 1**
 - **Signature visual:** FOIL on (x + 7)(x − 7) produces −7x and +7x, which collide and annihilate (flash, then fade to nothing). Later, **x + y is boxed** into one block "A" so the hidden pattern snaps into place.
 
@@ -122,9 +122,9 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 | Card | Sum times difference = difference of squares. | Sum times difference? {BR} The middle cancels, leaving a difference of squares. | Card: (A + B)(A − B) = A² − B² |
 
 ### SP3: Cubes: the 1-3-3-1 pattern
-- **File / class:** `sprod3_cubes.py` / `SP3Cubes`, `PART = "3 / 3"`
+- **File / class:** `videos/special_products/sprod3_cubes.py` / `SP3Cubes`, `PART = "3 / 3"`
 - **Book:** (A ± B)³ = A³ ± 3A²B + 3AB² ± B³; Example 4(b): (x² − 2)³ = **x⁶ − 6x⁴ + 12x² − 8**
-- **Signature visual:** coefficient chips **1 · 3 · 3 · 1** above four term slots. The exponent of A counts down (3, 2, 1, 0) as the exponent of B counts up (0, 1, 2, 3), each shown as yellow counters. Optional stretch: an isometric cube of side a + b splitting into 1 + 3 + 3 + 1 blocks (reuse `iso_cube()` from `rad1_what.py`).
+- **Signature visual:** coefficient chips **1 · 3 · 3 · 1** above four term slots. The exponent of A counts down (3, 2, 1, 0) as the exponent of B counts up (0, 1, 2, 3), each shown as yellow counters. Optional stretch: an isometric cube of side a + b splitting into 1 + 3 + 3 + 1 blocks (reuse `iso_cube()` from `videos/radicals/rad1_what.py`).
 
 | Beat | Subtitle | Spoken | Visual |
 |---|---|---|---|
@@ -143,7 +143,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 `class FactorScene(PolyScene): TOPIC = "FACTORING"`
 
 ### F1: Pull out the greatest common factor
-- **File / class:** `fact1_gcf.py` / `F1CommonFactor`, `PART = "1 / 3"`
+- **File / class:** `videos/factoring/fact1_gcf.py` / `F1CommonFactor`, `PART = "1 / 3"`
 - **Book:** factoring as expanding in reverse, (x − 2)(x + 3) = x² + x − 6; Example 6:
   - (a) 3x² − 6x = **3x(x − 2)**
   - (b) 8x⁴y² + 6x³y³ − 2xy⁴ = **2xy²(4x³ + 3x²y − y²)**
@@ -153,7 +153,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 | Beat | Subtitle | Spoken | Visual |
 |---|---|---|---|
 | 1 Hook | Expanding goes forward. Factoring goes back. | Expanding goes forward. {BR} Factoring goes back. | (x − 2)(x + 3) → x² + x − 6, then rewind |
-| 2 | 3x² − 6x: both terms share 3x. | In three x squared minus six x, {BR} both terms share three x. | The 3x inside each term highlights (as in `poly3_terms_factors.py`) |
+| 2 | 3x² − 6x: both terms share 3x. | In three x squared minus six x, {BR} both terms share three x. | The 3x inside each term highlights (as in `videos/polynomials/poly3_terms_factors.py`) |
 | 3 | So it's 3x(x − 2). Check by multiplying back. | So it's three x, times x minus two. {BR} Multiply back to check. | 3x steps outside; distribution arcs confirm |
 | 4 | Bigger: find the GCF piece by piece. | For a bigger one, build the common factor piece by piece. | The 6(b) expression and the three-row GCF table |
 | 5 | Take the smallest power of each: 2xy². | Numbers: two. {BR} x: the smallest power, x. {BR} y: y squared. {BR} Together, two x y squared. | Smallest exponents glow; result 2xy²(4x³ + 3x²y − y²) |
@@ -161,7 +161,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 | Card | Pull out the GCF first. Always check. | Pull out the greatest common factor first, {BR} and always check by multiplying back. | Card |
 
 ### F2: x² + bx + c: two numbers, one product, one sum
-- **File / class:** `fact2_trinomial.py` / `F2SumAndProduct`, `PART = "2 / 3"`
+- **File / class:** `videos/factoring/fact2_trinomial.py` / `F2SumAndProduct`, `PART = "2 / 3"`
 - **Book:** (x + r)(x + s) = x² + (r + s)x + rs; Example 7: x² + 7x + 12 = **(x + 3)(x + 4)**; Example 9(a): x² − 2x − 3 = **(x − 3)(x + 1)**
 - **Signature visual:** `pair_search(12, 7)`, a slot machine through 1·12 (sum 13), 2·6 (8) and 3·4 (7 ✓), with live "product / sum" readouts.
 
@@ -176,7 +176,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 | Card | Multiply to c, add to b. | Find two numbers that multiply to c, {BR} and add to b. | Card |
 
 ### F3: ax² + bx + c: smart trial and error
-- **File / class:** `fact3_trial_error.py` / `F3TrialAndError`, `PART = "3 / 3"`
+- **File / class:** `videos/factoring/fact3_trial_error.py` / `F3TrialAndError`, `PART = "3 / 3"`
 - **Book:** (px + r)(qx + s) with pq = a, rs = c, ps + qr = b; Example 8: 6x² + 7x − 5 = **(3x + 5)(2x − 1)**; Example 9(b): (5a + 1)² − 2(5a + 1) − 3 = **(5a − 2)(5a + 2)**
 - **Signature visual:** candidate factorings are tried one after another, each with a **middle-term meter**: Outer + Inner computed live, red until it equals 7x. Then the **block trick**: every 5a + 1 collapses into a single box □, so the problem becomes □² − 2□ − 3.
 
@@ -197,7 +197,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 `class SpecialFactorScene(PolyScene): TOPIC = "SPECIAL FACTORING"`
 
 ### SF1: Difference of squares
-- **File / class:** `sfact1_diff_squares.py` / `SF1DifferenceOfSquares`, `PART = "1 / 3"`
+- **File / class:** `videos/special_factoring/sfact1_diff_squares.py` / `SF1DifferenceOfSquares`, `PART = "1 / 3"`
 - **Book:** A² − B² = (A − B)(A + B) (the margin figure); Example 10(a): 4x² − 25 = **(2x − 5)(2x + 5)**; Example 10(b): (x + y)² − z² = **(x + y − z)(x + y + z)**
 - **Signature visual (the book's margin figure):** a big A×A square with a small B×B square removed from its corner. The leftover L-shape is cut into two strips, and one strip slides and rotates to form an **(A + B) × (A − B) rectangle**.
 - **Extra beat (not in the book, a common mistake):** A² + B² does **not** factor over the real numbers, e.g. x² + 4.
@@ -214,9 +214,9 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 | Card | Difference of squares: (A − B)(A + B). | A difference of squares {BR} always splits into A minus B, times A plus B. | Card |
 
 ### SF2: Perfect square trinomials
-- **File / class:** `sfact2_perfect_square.py` / `SF2PerfectSquare`, `PART = "2 / 3"`
+- **File / class:** `videos/special_factoring/sfact2_perfect_square.py` / `SF2PerfectSquare`, `PART = "2 / 3"`
 - **Book:** A² ± 2AB + B² = (A ± B)²; the test "the middle term is ± twice the product of the square roots of the outer terms"; Example 11(a): x² + 6x + 9 = **(x + 3)²**; Example 11(b): 4x² − 4xy + y² = **(2x − y)²**
-- **Signature visual:** **algebra tiles assemble into a square**. One x² tile, two "3x" strips and 9 unit tiles snap into a perfect (x + 3) × (x + 3) square (reuse `algebra_tile()` from `add_common.py`). A non-example, x² + 5x + 9, fails to close into a square.
+- **Signature visual:** **algebra tiles assemble into a square**. One x² tile, two "3x" strips and 9 unit tiles snap into a perfect (x + 3) × (x + 3) square (reuse `algebra_tile()` from `videos/add_subtract/add_common.py`). A non-example, x² + 5x + 9, fails to close into a square.
 
 | Beat | Subtitle | Spoken | Visual |
 |---|---|---|---|
@@ -229,7 +229,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 | Card | Middle = 2AB? Then it's (A ± B)². | If the middle is two A B, {BR} it's a perfect square. | Card: A² ± 2AB + B² = (A ± B)² |
 
 ### SF3: Sums and differences of cubes
-- **File / class:** `sfact3_cubes.py` / `SF3Cubes`, `PART = "3 / 3"`
+- **File / class:** `videos/special_factoring/sfact3_cubes.py` / `SF3Cubes`, `PART = "3 / 3"`
 - **Book:** A³ − B³ = (A − B)(A² + AB + B²) and A³ + B³ = (A + B)(A² − AB + B²); Example 12(a): 27x³ − 1 = **(3x − 1)(9x² + 3x + 1)**; Example 12(b): x⁶ + 8 = **(x² + 2)(x⁴ − 2x² + 4)**
 - **Signature visual:** the **sign pattern "S-O-AP"**: the first sign is the *Same*, the second is the *Opposite*, the third is *Always Positive*. Three signs light up in the formula with matching labels. (SOAP is a common classroom mnemonic, not from the book.)
 
@@ -250,7 +250,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 `class CompleteScene(PolyScene): TOPIC = "FACTOR COMPLETELY"`
 
 ### FC1: Keep going until nothing is left
-- **File / class:** `fcomp1_tree.py` / `FC1FactorTree`, `PART = "1 / 3"`
+- **File / class:** `videos/factor_completely/fcomp1_tree.py` / `FC1FactorTree`, `PART = "1 / 3"`
 - **Book:** the strategy (common factors first, then special forms, then repeat); Example 13(a): 2x⁴ − 8x² = **2x²(x − 2)(x + 2)**; Example 13(b): x⁵y² − xy⁶ = **xy²(x² + y²)(x + y)(x − y)**
 - **Signature visual:** a **factor tree** (`factor_tree()`). Each branch splits off one step, and leaves turn green once they're prime. In 13(b), x² + y² stays a leaf (a sum of squares; this links back to SF1).
 
@@ -265,7 +265,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 | Card | Common factor first. Repeat until every piece is prime. | Common factor first, {BR} and repeat until every piece is prime. | Card |
 
 ### FC2: Fractional exponents: pull out the smallest power
-- **File / class:** `fcomp2_fractional.py` / `FC2FractionalExponents`, `PART = "2 / 3"`
+- **File / class:** `videos/factor_completely/fcomp2_fractional.py` / `FC2FractionalExponents`, `PART = "2 / 3"`
 - **Book:** Example 14 (the book notes this appears in calculus). Margin note: x^(3/2) = x^(1/2)·x¹.
   - (a) 3x^(3/2) − 9x^(1/2) + 6x^(−1/2) = 3x^(−1/2)(x² − 3x + 2) = **3x^(−1/2)(x − 1)(x − 2)**
   - (b) (2 + x)^(−2/3)·x + (2 + x)^(1/3) = (2 + x)^(−2/3)[x + (2 + x)] = **2(2 + x)^(−2/3)(1 + x)**
@@ -282,11 +282,11 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 | Card | Factor out the smallest exponent. | With fractional exponents, {BR} factor out the smallest one. | Card |
 
 ### FC3: Factoring by grouping
-- **File / class:** `fcomp3_grouping.py` / `FC3Grouping`, `PART = "3 / 3"`
+- **File / class:** `videos/factor_completely/fcomp3_grouping.py` / `FC3Grouping`, `PART = "3 / 3"`
 - **Book:** Example 15.
   - (a) x³ + x² + 4x + 4 = x²(x + 1) + 4(x + 1) = **(x² + 4)(x + 1)**
   - (b) x³ − 2x² − 9x + 18 = x²(x − 2) − 9(x − 2) = (x² − 9)(x − 2) = **(x − 3)(x + 3)(x − 2)**
-- **Signature visual:** the four terms split into two pairs (brackets). Each pair factors, and the **same binomial appears in both** (it glows in matching colors), then slides out front, the way the shared factor did in `poly3_terms_factors.py`.
+- **Signature visual:** the four terms split into two pairs (brackets). Each pair factors, and the **same binomial appears in both** (it glows in matching colors), then slides out front, the way the shared factor did in `videos/polynomials/poly3_terms_factors.py`.
 
 | Beat | Subtitle | Spoken | Visual |
 |---|---|---|---|
@@ -300,7 +300,7 @@ Part 8 (grouping) has only one example set, so it's merged into the Part 7 serie
 
 ---
 
-## Optional Instagram posts (1080×1350, same template as `post_roots.py`)
+## Optional Instagram posts (1080×1350, same template as `posts/post_roots.py`)
 
 1. **"10 Formulas to Know"**: the 5 special products plus the 5 special factoring formulas, in two columns, each with a book example.
 2. **"How to Factor Anything"**: a decision flowchart. Common factor? Then by number of terms: 2 terms → difference of squares or sum/difference of cubes; 3 terms → perfect square or trinomial; 4 terms → grouping. Then repeat.

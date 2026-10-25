@@ -6,7 +6,7 @@ Everything used to make the vertical math explainer videos (YouTube Shorts / Ins
 - `requirements.txt`: Python and system dependencies
 - `project/`: **the complete, runnable source**. Render from inside this folder.
 - `scripts/`: voiceover scripts (ElevenLabs-ready) and subtitles for every narrated video
-- `reference/`: storyboard sheets, low-res motion previews and finished Instagram posts, for checking that renders match
+- Historical `reference/` media was removed after publication to save space; regenerate previews and storyboards from the retained Python scenes when needed.
 
 ---
 
@@ -33,7 +33,7 @@ export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/homebrew/share/pkgconfi
 .venv/bin/pip install -r ../requirements.txt
 ```
 
-You also need `ffmpeg` and a LaTeX distribution with `latex` and `dvisvgm` on PATH (TeX Live 2025 was used). The caption font is **Avenir Next**, which ships with macOS. On Linux, install it or change `FONT` in `common.py`.
+You also need `ffmpeg` and a LaTeX distribution with `latex` and `dvisvgm` on PATH (TeX Live 2025 was used). The caption font is **Avenir Next**, which ships with macOS. On Linux, install it or change `FONT` in `videos/common.py`.
 
 ---
 
@@ -43,10 +43,10 @@ All commands run from `project/`. `manim.cfg` sets the video canvas (1080×1920,
 
 ```bash
 # Fast preview (540x960, 30 fps)
-.venv/bin/manim render -r 540,960 --fps 30 --disable_caching rad1_what.py R1WhatIsARoot
+.venv/bin/manim render -r 540,960 --fps 30 --disable_caching videos/radicals/rad1_what.py R1WhatIsARoot
 
 # Final (1080x1920, 60 fps, from manim.cfg)
-.venv/bin/manim render rad1_what.py R1WhatIsARoot
+.venv/bin/manim render videos/radicals/rad1_what.py R1WhatIsARoot
 
 # Storyboard sheet: one frame per beat → build/storyboard/<Scene>_storyboard.png
 .venv/bin/python tools/storyboard.py R1WhatIsARoot media/videos/rad1_what/960p30/R1WhatIsARoot.mp4
@@ -55,7 +55,7 @@ All commands run from `project/`. `manim.cfg` sets the video canvas (1080×1920,
 .venv/bin/python tools/export_scripts.py OUT.md R1WhatIsARoot R2AbsoluteTrap
 
 # Instagram post (still image)
-.venv/bin/manim render -s --config_file post.cfg post_roots.py RootRulesPost
+.venv/bin/manim render -s --config_file post.cfg posts/post_roots.py RootRulesPost
 ```
 
 - **Render scenes one at a time.** Parallel renders race on Manim's shared LaTeX cache (`media/Tex`) and fail with `FileNotFoundError`.
@@ -69,42 +69,42 @@ The header shown in each video is `TOPIC · n / N`. Durations are for the previe
 
 | Series (header) | File | Scene class | Concept | Length |
 |---|---|---|---|---|
-| **INTEGER EXPONENTS** (captions only, no voiceover, no watermark) | `v1_notation.py` | `V1ExponentialNotation` | aⁿ = n factors; (−3)⁴ vs −3⁴ | 54.6 s |
-| | `v2_product_rule.py` | `V2ProductRule` | aᵐ·aⁿ = aᵐ⁺ⁿ by counting factors | 37.4 s |
-| | `v3_zero_negative.py` | `V3ZeroNegative` | a⁰ = 1, a⁻ⁿ = 1/aⁿ | 47.6 s |
-| **LAWS OF EXPONENTS** (narrated, no watermark) | `laws1_quotient.py` | `L1QuotientRule` | Law 2, cancelling pairs | 50.9 s |
-| | `laws2_power_of_power.py` | `L2PowerOfPower` | Law 3, grid of groups | 47.1 s |
-| | `laws3_product_quotient.py` | `L3ProductQuotient` | Laws 4 & 5, (a+b)² warning | 56.8 s |
-| | `laws4_negative_fractions.py` | `L4NegativeFractions` | Laws 6 & 7, flip and hop | 53.3 s |
-| | `laws5_together.py` | `L5PuttingItTogether` | Example 4(a), all 7 laws | 39.2 s |
-| **SCIENTIFIC NOTATION** (narrated, watermark) | `sci1_what.py` | `S1WhatIsIt` | a × 10ⁿ, hopping decimal point | 54.8 s |
-| | `sci2_convert.py` | `S2Converting` | Decimal ↔ scientific, calculator E | 54.0 s |
-| | `sci3_calculate.py` | `S3Calculating` | Example 8, two lanes, significant figures | 51.7 s |
-| **RADICALS** | `rad1_what.py` | `R1WhatIsARoot` | Principal root, square/cube geometry | 55.7 s |
-| | `rad2_abs.py` | `R2AbsoluteTrap` | √(x²) = \|x\|, folding number line | 51.8 s |
-| | `rad3_simplify.py` | `R3Simplifying` | Product property, factors escape the root | 54.5 s |
-| | `rad4_combine.py` | `R4Combining` | √(a+b) ≠ √a+√b (3-4-5 triangle), like radicals | 55.8 s |
-| **RATIONAL EXPONENTS** | `rat1_meaning.py` | `Q1WhatItMeans` | 9^(1/2) staircase, a^(1/n) = ⁿ√a | 53.7 s |
-| | `rat2_power_root.py` | `Q2PowerAndRoot` | Bottom = root, top = power; race | 55.6 s |
-| | `rat3_translate.py` | `Q3Translating` | Radicals → exponents, fraction pies | 51.0 s |
-| **RATIONALIZING** | `ratz1_disguised_one.py` | `Z1DisguisedOne` | Multiply by √a/√a = 1 | 49.0 s |
-| | `ratz2_missing_piece.py` | `Z2MissingPiece` | Exponent meter fills to n | 53.1 s |
-| **POLYNOMIALS** (Section 1.3) | `poly1_what.py` | `P1WhatIsAPolynomial` | Exponent scanner, mono/bi/tri | 47.5 s |
-| | `poly2_reading.py` | `P2ReadingAPolynomial` | Terms, coefficients, degree | 53.0 s |
-| | `poly3_terms_factors.py` | `P3TermsVsFactors` | ax + 2ay = a(x + 2y) | 42.1 s |
-| **ADD & SUBTRACT** | `add1_like_terms.py` | `A1LikeTerms` | Algebra tiles, sort into bins | 55.0 s |
-| | `add2_minus_sign.py` | `A2MinusSign` | The minus flips every sign | 38.3 s |
+| **INTEGER EXPONENTS** (captions only, no voiceover, no watermark) | `videos/integer_exponents/v1_notation.py` | `V1ExponentialNotation` | aⁿ = n factors; (−3)⁴ vs −3⁴ | 54.6 s |
+| | `videos/integer_exponents/v2_product_rule.py` | `V2ProductRule` | aᵐ·aⁿ = aᵐ⁺ⁿ by counting factors | 37.4 s |
+| | `videos/integer_exponents/v3_zero_negative.py` | `V3ZeroNegative` | a⁰ = 1, a⁻ⁿ = 1/aⁿ | 47.6 s |
+| **LAWS OF EXPONENTS** (narrated, no watermark) | `videos/laws_of_exponents/laws1_quotient.py` | `L1QuotientRule` | Law 2, cancelling pairs | 50.9 s |
+| | `videos/laws_of_exponents/laws2_power_of_power.py` | `L2PowerOfPower` | Law 3, grid of groups | 47.1 s |
+| | `videos/laws_of_exponents/laws3_product_quotient.py` | `L3ProductQuotient` | Laws 4 & 5, (a+b)² warning | 56.8 s |
+| | `videos/laws_of_exponents/laws4_negative_fractions.py` | `L4NegativeFractions` | Laws 6 & 7, flip and hop | 53.3 s |
+| | `videos/laws_of_exponents/laws5_together.py` | `L5PuttingItTogether` | Example 4(a), all 7 laws | 39.2 s |
+| **SCIENTIFIC NOTATION** (narrated, watermark) | `videos/scientific_notation/sci1_what.py` | `S1WhatIsIt` | a × 10ⁿ, hopping decimal point | 54.8 s |
+| | `videos/scientific_notation/sci2_convert.py` | `S2Converting` | Decimal ↔ scientific, calculator E | 54.0 s |
+| | `videos/scientific_notation/sci3_calculate.py` | `S3Calculating` | Example 8, two lanes, significant figures | 51.7 s |
+| **RADICALS** | `videos/radicals/rad1_what.py` | `R1WhatIsARoot` | Principal root, square/cube geometry | 55.7 s |
+| | `videos/radicals/rad2_abs.py` | `R2AbsoluteTrap` | √(x²) = \|x\|, folding number line | 51.8 s |
+| | `videos/radicals/rad3_simplify.py` | `R3Simplifying` | Product property, factors escape the root | 54.5 s |
+| | `videos/radicals/rad4_combine.py` | `R4Combining` | √(a+b) ≠ √a+√b (3-4-5 triangle), like radicals | 55.8 s |
+| **RATIONAL EXPONENTS** | `videos/rational_exponents/rat1_meaning.py` | `Q1WhatItMeans` | 9^(1/2) staircase, a^(1/n) = ⁿ√a | 53.7 s |
+| | `videos/rational_exponents/rat2_power_root.py` | `Q2PowerAndRoot` | Bottom = root, top = power; race | 55.6 s |
+| | `videos/rational_exponents/rat3_translate.py` | `Q3Translating` | Radicals → exponents, fraction pies | 51.0 s |
+| **RATIONALIZING** | `videos/rationalizing/ratz1_disguised_one.py` | `Z1DisguisedOne` | Multiply by √a/√a = 1 | 49.0 s |
+| | `videos/rationalizing/ratz2_missing_piece.py` | `Z2MissingPiece` | Exponent meter fills to n | 53.1 s |
+| **POLYNOMIALS** (Section 1.3) | `videos/polynomials/poly1_what.py` | `P1WhatIsAPolynomial` | Exponent scanner, mono/bi/tri | 47.5 s |
+| | `videos/polynomials/poly2_reading.py` | `P2ReadingAPolynomial` | Terms, coefficients, degree | 53.0 s |
+| | `videos/polynomials/poly3_terms_factors.py` | `P3TermsVsFactors` | ax + 2ay = a(x + 2y) | 42.1 s |
+| **ADD & SUBTRACT** | `videos/add_subtract/add1_like_terms.py` | `A1LikeTerms` | Algebra tiles, sort into bins | 55.0 s |
+| | `videos/add_subtract/add2_minus_sign.py` | `A2MinusSign` | The minus flips every sign | 38.3 s |
 
-**Instagram posts** (1080×1350; finished PNGs in `reference/posts/`):
+**Instagram post sources** (1080×1350; historical rendered PNGs were removed after publication):
 
 | File | Scene |
 |---|---|
-| `post_seven_laws.py` | `SevenLawsPost` (no watermark) |
-| `post_billion.py` | `BillionPost` |
-| `post_roots.py` | `RootRulesPost` |
-| `post_translate.py` | `TranslatorPost` |
-| `post_polynomial.py` | `PolynomialAnatomyPost` |
-| `post_like_terms.py` | `LikeTermsPost` |
+| `posts/post_seven_laws.py` | `SevenLawsPost` (no watermark) |
+| `posts/post_billion.py` | `BillionPost` |
+| `posts/post_roots.py` | `RootRulesPost` |
+| `posts/post_translate.py` | `TranslatorPost` |
+| `posts/post_polynomial.py` | `PolynomialAnatomyPost` |
+| `posts/post_like_terms.py` | `LikeTermsPost` |
 
 **Not yet covered from Section 1.3:** multiplying (FOIL, distributing), special product formulas, all factoring (GCF, trinomials, special formulas, factoring completely, fractional exponents, grouping).
 
@@ -149,12 +149,12 @@ The background is a dark radial gradient (`#151A26` glowing to `#0B0D12`), gener
 
 | File | Role |
 |---|---|
-| `common.py` | Palette, layout constants, `tex()`, `label()`, `fit()`, `fit_zone()`, `auto()` (colour a `MathTex` by its parts: exponents yellow, variables/digits blue), `chip()`, background, `watermark()`, `ShortScene` (header, captions, key-idea card, outro), `NarratedScene` (narration-driven beats and subtitles) |
-| `sci_common.py` | `SciScene`, `DecimalRow` (digits on fixed slots, a decimal point that hops along arcs, zeros appearing, and a live `× 10^k` counter) |
-| `rad_common.py` | `RadScene`, `rt(n)` / `rtex(...)` for radicals as separate parts, plus `check()` and `cross()` |
-| `rat_common.py`, `ratz_common.py` | Series base classes. `ratz_common.meter()` is the exponent meter |
-| `poly_common.py` | `PolyScene`, `ptex()` (coefficients white), `poly(terms)`: one `MathTex` with correct sign spacing plus `.terms` groups for term tiles |
-| `add_common.py` | `AddScene`, `algebra_tile()`, `bin_heads()` (the x³ / x² / x / 1 sorting bins) |
+| `videos/common.py` | Palette, layout constants, `tex()`, `label()`, `fit()`, `fit_zone()`, `auto()` (colour a `MathTex` by its parts: exponents yellow, variables/digits blue), `chip()`, background, `watermark()`, `ShortScene` (header, captions, key-idea card, outro), `NarratedScene` (narration-driven beats and subtitles) |
+| `videos/scientific_notation/sci_common.py` | `SciScene`, `DecimalRow` (digits on fixed slots, a decimal point that hops along arcs, zeros appearing, and a live `× 10^k` counter) |
+| `videos/radicals/rad_common.py` | `RadScene`, `rt(n)` / `rtex(...)` for radicals as separate parts, plus `check()` and `cross()` |
+| `videos/rational_exponents/rat_common.py`, `videos/rationalizing/ratz_common.py` | Series base classes. `ratz_common.meter()` is the exponent meter |
+| `videos/polynomials/poly_common.py` | `PolyScene`, `ptex()` (coefficients white), `poly(terms)`: one `MathTex` with correct sign spacing plus `.terms` groups for term tiles |
+| `videos/add_subtract/add_common.py` | `AddScene`, `algebra_tile()`, `bin_heads()` (the x³ / x² / x / 1 sorting bins) |
 | `tools/storyboard.py` | Grabs one frame per beat and builds a contact sheet |
 | `tools/export_scripts.py` | Collects `voiceover.txt` and `.srt` files into a markdown document |
 
@@ -215,8 +215,8 @@ Subtitles are already burned into the video, so no separate caption track is nee
 - **Model:** Multilingual v2, Turbo or Flash. These support `<break time="…" />`; on Eleven v3, replace break tags with "…".
 - **Settings:** a calm, warm narrator voice. Stability ~50, Similarity ~75, Style 0–15, Speed 0.95.
 - **Single letters** are written so they're read as letters ("A to the N", "x to the fourth"). If a letter mispronounces, spell it phonetically ("ay", "en", "see").
-- **Each `scripts/*_VOICEOVER.md`** lists the script and subtitle timings for a series. `scripts/per-scene/` has the raw per-video files.
-- **Integer Exponents (V1–V3)** are captions-only. `scripts/SCRIPTS.md` has their timed captions. `scripts/VOICEOVER.md` is a hand-written voiceover drafted for them, but it isn't wired into those scenes: they use the older `cap()` caption API, not `say()`. Porting them to `NarratedScene` would make them consistent with the rest.
+- Historical generated script exports were removed after publication. Narrated scenes regenerate `.voiceover.txt` and `.srt` files on render, and `tools/export_scripts.py` rebuilds combined voiceover documents.
+- **Integer Exponents (V1–V3)** are captions-only and use the older `cap()` caption API rather than `say()`.
 
 ## 10. Source material
 

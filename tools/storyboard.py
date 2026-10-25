@@ -9,24 +9,23 @@ usage: storyboard.py <SceneName> <video.mp4>
 import json
 import subprocess
 import sys
+import tempfile
 import textwrap
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-ROOT = Path(__file__).resolve().parents[1]
-BUILD = ROOT / "build"
+from build_paths import BUILD, scene_dir
 
 scene, video = sys.argv[1], Path(sys.argv[2])
-data = json.loads((BUILD / f"{scene}.marks.json").read_text())
+build_dir = scene_dir(scene, video.parent)
+data = json.loads((build_dir / f"{scene}.marks.json").read_text())
 marks, duration = data["marks"], data["duration"]
 snaps = data.get("snaps", [])
 ends = [m["t"] for m in marks[1:]] + [duration]
 
-out_dir = BUILD / "storyboard" / scene
-out_dir.mkdir(parents=True, exist_ok=True)
-for old in out_dir.glob("*.png"):
-    old.unlink()
+tmp = tempfile.TemporaryDirectory(prefix=f"{scene}-storyboard-")
+out_dir = Path(tmp.name)
 frames = []
 for i, (m, end) in enumerate(zip(marks, ends), 1):
     inside = [s for s in snaps if m["t"] < s <= end]
@@ -64,6 +63,8 @@ for i, (p, m, t) in enumerate(frames):
     caption = f"{i + 1:02d} · {m['t']:.1f}s  {m['caption']}"
     for j, line in enumerate(textwrap.wrap(caption, 32)[:4]):
         d.text((x, y + th + 8 + j * 27), line, fill=(200, 205, 215), font=font)
-sheet_path = BUILD / "storyboard" / f"{scene}_storyboard.png"
+sheet_path = (build_dir if build_dir != BUILD else BUILD / "storyboard") / f"{scene}_storyboard.png"
+sheet_path.parent.mkdir(parents=True, exist_ok=True)
 sheet.save(sheet_path)
+tmp.cleanup()
 print(sheet_path)
